@@ -3,7 +3,7 @@ const {
   controlador,
   incrementar,
   disminuir,
-} = require("../controllers/controladores");
+} = require("../controllers/contador.controllers");
 
 const router = Router();
 

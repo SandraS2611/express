@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const app = express();
 
 //middleware
+app.use(express.json())
 app.use(cors());
 app.use(morgan("dev"));
 
@@ -19,7 +20,8 @@ app.use(morgan("dev"));
 //  })
 
 //Routes
-app.use("/contador", require("./Routes/contador.routes"));
+app.use("/contador", require("./Routes/contadores.routes"));
+app.use("/usuarios", require("./Routes/usuarios.routes"));
 
 app.use((req, res) => {
   //no va next porq esta abajo de todo
@@ -28,4 +30,3 @@ app.use((req, res) => {
 
 //Config - STARTING SERVER
 app.listen(4000);
-
